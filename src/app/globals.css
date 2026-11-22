@@ -3117,3 +3117,38 @@ p {
     font-size: 44px;
   }
 }
+
+
+
+/* ============================
+   GLOBAL MOBILE OVERFLOW FIX
+============================ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main,
+section,
+footer {
+  max-width: 100%;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
