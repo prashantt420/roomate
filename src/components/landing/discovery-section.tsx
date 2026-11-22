@@ -1,5 +1,5 @@
 "use client";
-
+import type { Variants } from "framer-motion";
 import { useState } from "react";
 import {
   AnimatePresence,
@@ -61,11 +61,12 @@ const profiles: Profile[] = [
   },
 ];
 
-const cardVariants = {
+const cardVariants: Variants = {
   initial: {
-    scale: 0.92,
+    scale: 0.9,
     opacity: 0,
   },
+
   animate: {
     scale: 1,
     opacity: 1,
@@ -73,15 +74,16 @@ const cardVariants = {
       duration: 0.3,
     },
   },
-  exit: (direction: SwipeDirection) => ({
-    x: direction === "right" ? 1000 : -1000,
+
+  exit: {
+    x: -300,
     opacity: 0,
-    rotate: direction === "right" ? 35 : -35,
+    rotate: -15,
     transition: {
-      duration: 0.35,
+      duration: 0.3,
       ease: "easeOut",
     },
-  }),
+  },
 };
 
 function SwipeCard({
