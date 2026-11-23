@@ -397,8 +397,8 @@ p {
 
   .roomate-button {
     min-height: 50px;
-    padding: 11px 18px;
-    font-size: 14px;
+    padding: 11px 30px;
+    font-size: 18px;
   }
 
   .roomate-icon-button {
@@ -420,6 +420,297 @@ p {
   }
 }
 
+
+/* =========================================
+   ROOMATE NAVBAR
+========================================= */
+
+.roomate-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  padding: 20px 16px 0;
+}
+
+.navbar-container {
+  max-width: 1440px;
+}
+
+.navbar-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 62px;
+  min-width: 145px;
+
+  padding: 0 28px;
+
+  background: #171310;
+  border: 2px solid #000;
+  border-radius: 999px;
+
+  box-shadow: 5px 5px 0 #ff48a0;
+
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar-logo-text {
+  color: #ff48a0;
+  font-size: 24px;
+  font-weight: 950;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* =========================================
+   DESKTOP NAVIGATION
+========================================= */
+
+.navbar-desktop {
+  display: none;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px;
+
+  background: #fffaf3;
+  border: 2px solid #171310;
+  border-radius: 999px;
+
+  box-shadow: 6px 6px 0 #171310;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  color: #171310;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: background 0.2s ease;
+}
+
+.navbar-link:hover {
+  background: #fbc8e3;
+}
+
+/* CTA */
+
+.navbar-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px 8px 6px 20px;
+
+  background: #ff48a0;
+  color: #171310;
+
+  border: 2px solid #171310;
+  border-radius: 999px;
+
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  background: #171310;
+  color: #ff48a0;
+
+  border-radius: 50%;
+
+  transition: transform 0.25s ease;
+}
+
+.navbar-cta:hover .navbar-cta-icon {
+  transform: rotate(45deg);
+}
+
+/* =========================================
+   MOBILE TOGGLE
+========================================= */
+
+.navbar-mobile-toggle {
+  position: relative;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  background: #ff48a0;
+  color: #171310;
+
+  border: 2px solid #171310;
+  border-radius: 50%;
+
+  box-shadow: 4px 4px 0 #171310;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+.navbar-mobile-menu {
+  position: absolute;
+  top: 76px;
+  left: 16px;
+  right: 16px;
+
+  overflow: hidden;
+
+  background: #fffaf3;
+  border: 2px solid #171310;
+  border-radius: 28px;
+
+  box-shadow: 6px 6px 0 #171310;
+}
+
+.navbar-mobile-links {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.navbar-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px;
+
+  border-bottom: 2px solid rgba(23, 19, 16, 0.1);
+
+  color: #171310;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.navbar-mobile-link:last-of-type {
+  border-bottom: none;
+}
+
+.navbar-mobile-link:hover {
+  color: #ff48a0;
+}
+
+/* Mobile CTA */
+
+.navbar-mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 12px;
+  padding: 14px 20px;
+
+  background: #ff48a0;
+  color: #171310;
+
+  border: 2px solid #171310;
+  border-radius: 999px;
+
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* =========================================
+   DESKTOP BREAKPOINT
+========================================= */
+
+@media (min-width: 768px) {
+  .navbar-desktop {
+    display: flex;
+  }
+
+  .navbar-mobile-toggle {
+    display: none;
+  }
+
+  .navbar-mobile-menu {
+    display: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .roomate-navbar {
+    padding: 14px 12px 0;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+    height: 56px;
+    min-height: 56px;
+    padding: 0 24px;
+  }
+
+  .navbar-logo-text {
+    font-size: 23px;
+  }
+
+  .navbar-mobile-toggle {
+    width: 46px;
+    height: 46px;
+  }
+
+  .navbar-mobile-menu {
+    top: 68px;
+    left: 12px;
+    right: 12px;
+  }
+}
 
 
 /* =========================================
@@ -875,8 +1166,8 @@ p {
 
   .hero-heading {
     width: 100%;
-    font-size: clamp(58px, 12.8vw, 92px);
-    line-height: 0.98;
+    font-size: clamp(48px, 12.8vw, 92px);
+    line-height: 1;
     letter-spacing: -0.07em;
   }
 
@@ -997,13 +1288,14 @@ p {
 /* ================================
    ROOMATE - PROBLEM SECTION
 ================================ */
-
+@media (min-width: 767px) {
 .problem-section {
   position: relative;
   overflow: visible;
   background: #fff5f7;
   padding-top: 100px;
   padding-bottom: 130px;
+}
 }
 
 .problem-heading {
@@ -1070,17 +1362,17 @@ p {
 }
 
 .problem-sticky-2 {
-  top: 120px;
+  top: 115px;
   z-index: 2;
 }
 
 .problem-sticky-3 {
-  top: 140px;
+  top: 130px;
   z-index: 3;
 }
 
 .problem-sticky-4 {
-  top: 160px;
+  top: 145px;
   z-index: 4;
 }
 

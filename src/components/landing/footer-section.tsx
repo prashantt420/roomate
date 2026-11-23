@@ -90,11 +90,11 @@ export default function FooterSection() {
 
             <div className="footer-socials">
               <a href="#" aria-label="Instagram">
-                Instagram
+                <img src="/icons/instagram-logo.png" alt="Instagram" />
               </a>
 
               <a href="#" aria-label="Twitter">
-                Twitter
+                <img src="/icons/x-logo.png" alt="Twitter" />
               </a>
             </div>
           </div>

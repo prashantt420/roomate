@@ -178,20 +178,7 @@ export default function Hero() {
               <Sparkles size={25} strokeWidth={2.5} />
             </motion.div>
 
-            {/* Bottom message */}
-            <motion.div
-              animate={{ y: [0, -7, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1,
-              }}
-              className="hero-bottom-message"
-            >
-              <p>Your next home starts with people.</p>
-            </motion.div>
-          </div>
+            </div>
         </div>
       </Container>
     </section>

@@ -1,4 +1,6 @@
+
 "use client";
+
 import type { Variants } from "framer-motion";
 import { useState } from "react";
 import {
@@ -61,6 +63,7 @@ const profiles: Profile[] = [
   },
 ];
 
+/* Direction-aware exit animation */
 const cardVariants: Variants = {
   initial: {
     scale: 0.9,
@@ -75,15 +78,15 @@ const cardVariants: Variants = {
     },
   },
 
-  exit: {
-    x: -300,
+  exit: (direction: SwipeDirection) => ({
+    x: direction === "right" ? 500 : -500,
     opacity: 0,
-    rotate: -15,
+    rotate: direction === "right" ? 15 : -15,
     transition: {
-      duration: 0.3,
+      duration: 0.35,
       ease: "easeOut",
     },
-  },
+  }),
 };
 
 function SwipeCard({
@@ -204,6 +207,7 @@ export default function DiscoverySection() {
   const handleSwipe = (direction: SwipeDirection) => {
     if (!currentProfile) return;
 
+    // Set direction BEFORE changing profile
     setSwipeDirection(direction);
 
     if (direction === "right") {
@@ -230,10 +234,8 @@ export default function DiscoverySection() {
 
       <div className="discovery-container">
         <div className="discovery-layout">
-
           {/* LEFT SIDE: DISCOVERY CARDS */}
           <div className="discovery-left">
-
             <div className="discovery-card-label">
               <span className="discovery-label-dot" />
               YOUR FUTURE FLATMATES
@@ -277,10 +279,10 @@ export default function DiscoverySection() {
                     YOU DID IT!
                   </div>
 
-                  <h3>That&apos;s everyone!</h3>
+                  <h3>That's everyone!</h3>
 
                   <p>
-                    You&apos;ve explored all available profiles.
+                    You've explored all available profiles.
                     Ready to give it another go?
                   </p>
 
@@ -322,7 +324,11 @@ export default function DiscoverySection() {
                 <div
                   className="discovery-progress-fill"
                   style={{
-                    width: `${(Math.min(currentIndex, profiles.length) / profiles.length) * 100}%`,
+                    width: `${
+                      (Math.min(currentIndex, profiles.length) /
+                        profiles.length) *
+                      100
+                    }%`,
                   }}
                 />
               </div>
@@ -339,7 +345,6 @@ export default function DiscoverySection() {
 
           {/* RIGHT SIDE: SECTION CONTENT */}
           <div className="discovery-content">
-
             <div className="discovery-eyebrow">
               <Sparkles size={17} strokeWidth={3} />
               THE DISCOVERY EXPERIENCE
@@ -354,14 +359,13 @@ export default function DiscoverySection() {
             </h2>
 
             <p className="discovery-description">
-              Finding the right roommate isn&apos;t about scrolling
-              through endless listings. It&apos;s about finding people
-              you&apos;ll actually enjoy living with.
+              Finding the right roommate isn't about scrolling
+              through endless listings. It's about finding people
+              you'll actually enjoy living with.
             </p>
 
             {/* Feature cards */}
             <div className="discovery-features">
-
               <div className="discovery-feature discovery-feature-pink">
                 <div className="discovery-feature-icon discovery-feature-icon-lime">
                   <Sparkles size={23} strokeWidth={3} />
@@ -387,7 +391,7 @@ export default function DiscoverySection() {
                   <h3>Your people, your choice</h3>
                   <p>
                     Like the profiles that feel right. Skip the ones
-                    that don&apos;t.
+                    that don't.
                   </p>
                 </div>
 
@@ -422,10 +426,11 @@ export default function DiscoverySection() {
               </span>
 
               <span>
-                {likedProfiles.length === 1 ? "profile liked" : "profiles liked"}
+                {likedProfiles.length === 1
+                  ? "profile liked"
+                  : "profiles liked"}
               </span>
             </div>
-
           </div>
         </div>
       </div>
